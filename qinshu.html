@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颍上琴书 - 非物质文化遗产</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="qinshu.css">
+    <!-- <style type="text/tailwindcss">    
+    </style> -->
+</head>
+<body class="font-sans text-dark antialiased">
+    <!-- 视频背景容器 -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="background.mp4" type="video/mp4">
+            <!-- 备用图片背景 -->
+            <img src="https://picsum.photos/id/325/1920/1080" alt="背景图片">
+        </video>
+    </div>
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 py-4">
+        <div class="container mx-auto px-4 md:px-8">
+            <nav class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-serif font-bold text-white text-shadow-lg">颍上非遗</a>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-white hover:text-secondary transition-colors text-shadow">首页</a>
+                    <a href="#overview" class="text-white hover:text-secondary transition-colors text-shadow">概述</a>
+                    <a href="#history" class="text-white hover:text-secondary transition-colors text-shadow">历史渊源</a>
+                    <a href="#performance" class="text-white hover:text-secondary transition-colors text-shadow">表演形式</a>
+                    <a href="#heritage" class="text-white hover:text-secondary transition-colors text-shadow">传承保护</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </nav>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 bg-white/95 bg-blur rounded-lg shadow-lg p-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#" class="text-dark hover:text-primary transition-colors py-2">首页</a>
+                    <a href="#overview" class="text-dark hover:text-primary transition-colors py-2">概述</a>
+                    <a href="#history" class="text-dark hover:text-primary transition-colors py-2">历史渊源</a>
+                    <a href="#performance" class="text-dark hover:text-primary transition-colors py-2">表演形式</a>
+                    <a href="#heritage" class="text-dark hover:text-primary transition-colors py-2">传承保护</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <section id="hero" class="h-screen relative flex items-center justify-center overflow-hidden">
+        <!-- 背景覆盖层 -->
+        <div class="absolute inset-0 bg-dark/60 z-0"></div>
+        
+        <!-- 移除背景图div -->
+        
+        <!-- 英雄区内容保持不变 -->
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-serif font-bold text-white mb-6 leading-tight text-shadow-lg">
+                颍上琴书
+            </h1>
+            <p class="text-[clamp(1rem,3vw,1.5rem)] text-white max-w-3xl mx-auto mb-10 text-shadow">
+                弦音婉转传百年，一曲琴书诉古今
+            </p>
+            <a href="#overview" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                了解详情 <i class="fa fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+        
+        <!-- 向下滚动提示 -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fa fa-angle-down text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- 概述部分 -->
+    <section id="overview" class="py-24 content-section">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full mb-4">市级非物质文化遗产</span>
+                    <h2 class="text-[clamp(1.75rem,5vw,3rem)] font-serif font-bold mb-8 leading-tight">
+                        淮河岸边的<br>说唱艺术瑰宝
+                    </h2>
+                    <p class="text-dark mb-6 text-lg">
+                        颍上琴书是流传于安徽省颍上县及周边地区的一种传统说唱艺术，距今已有200多年历史，2008年被列入市级非物质文化遗产名录。
+                    </p>
+                    <p class="text-dark mb-6 text-lg">
+                        作为淮河文化的重要组成部分，颍上琴书以其婉转悠扬的唱腔、生动活泼的表演和贴近生活的内容，深受当地群众喜爱，是颍上人民精神文化生活的重要组成部分。
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                                <i class="fa fa-history"></i>
+                            </div>
+                            <span>200+ 年历史</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                                <i class="fa fa-music"></i>
+                            </div>
+                            <span>独特唱腔风格</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-3">
+                                <i class="fa fa-book"></i>
+                            </div>
+                            <span>百余种传统曲目</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative reveal">
+                    <div class="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full filter blur-3xl"></div>
+                    
+                    <div class="relative grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <img src="琴书素材/1.jpeg" alt="颍上琴书表演" class="w-full h-64 object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500">
+
+                            <img src="琴书素材/2.jpeg" alt="琴书伴奏乐器" class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <img src="琴书素材/3.jpeg" alt="琴书传承人表演" class="w-full h-40 object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500">
+                            <img src="琴书素材/4.jpeg" alt="琴书演出场景" class="w-full h-64 object-cover rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 历史渊源 -->
+    <section id="history" class="py-24 bg-white/80 content-section">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <h5 class="text-primary uppercase tracking-widest mb-4">源远流长</h5>
+                <h2 class="text-[clamp(1.75rem,5vw,3rem)] font-serif font-bold mb-6">历史发展脉络</h2>
+                <p class="text-dark text-lg">
+                    颍上琴书的形成与发展，伴随着淮河两岸的社会变迁，历经数代艺人的传承与创新。
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- 时间线 -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2"></div>
+                
+                <!-- 时间线内容 -->
+                <div class="space-y-24">
+                    <!-- 时间点1 -->
+                    <div class="md:grid md:grid-cols-2 gap-12 items-center reveal">
+                        <div class="md:text-right order-2 md:order-1">
+                            <h3 class="text-2xl font-bold mb-4">起源时期</h3>
+                            <p class="text-dark mb-4">
+                                清嘉庆年间（1796-1820），颍上琴书由民间小调与地方方言结合发展而来，最初为单人坐唱形式，主要地在农村集市和节庆活动中表演。
+                            </p>
+                            <p class="text-gray-500">约1800年代初期</p>
+                        </div>
+                        
+                        <div class="hidden md:block absolute left-1/2 w-6 h-6 rounded-full bg-primary transform -translate-x-1/2"></div>
+                        
+                        <div class="order-1 md:order-2">
+                            <img src="琴书素材/2.jpeg" alt="早期琴书表演" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                        </div>
+                    </div>
+                    
+                    <!-- 时间点2 -->
+                    <div class="md:grid md:grid-cols-2 gap-12 items-center reveal">
+                        <div>
+                            <img src="琴书素材/5.jpg" alt="琴书发展时期" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                        </div>
+                        
+                        <div class="hidden md:block absolute left-1/2 w-6 h-6 rounded-full bg-primary transform -translate-x-1/2"></div>
+                        
+                        <div class="md:text-left">
+                            <h3 class="text-2xl font-bold mb-4">发展兴盛期</h3>
+                            <p class="text-dark mb-4">
+                                清末民初，颍上琴书进入兴盛期，形成了"东派"、"西派"两大流派，出现了专业班社，表演形式从单人发展到多人合作，曲目也日益丰富。
+                            </p>
+                            <p class="text-gray-500">1900-1940年代</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 时间点3 -->
+                    <div class="md:grid md:grid-cols-2 gap-12 items-center reveal">
+                        <div class="md:text-right order-2 md:order-1">
+                            <h3 class="text-2xl font-bold mb-4">当代传承</h3>
+                            <p class="text-dark mb-4">
+                                新中国成立后，政府对传统艺术进行扶持，颍上琴书得到进一步发展。近年来，通过非遗保护工程，年轻一代传承人不断涌现，为这一古老艺术注入新活力。
+                            </p>
+                            <p class="text-gray-500">1950年代至今</p>
+                        </div>
+                        
+                        <div class="hidden md:block absolute left-1/2 w-6 h-6 rounded-full bg-primary transform -translate-x-1/2"></div>
+                        
+                        <div class="order-1 md:order-2">
+                            <img src="琴书素材/4.jpeg" alt="当代琴书传承" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 表演形式与艺术特色 -->
+    <section id="performance" class="py-24 content-section">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <h5 class="text-primary uppercase tracking-widest mb-4">艺术特色</h5>
+                <h2 class="text-[clamp(1.75rem,5vw,3rem)] font-serif font-bold mb-6">表演形式与音乐特点</h2>
+                <p class="text-dark text-lg">
+                    颍上琴书以其独特的表演风格和音乐特色，在安徽民间艺术中独树一帜。
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 特点1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 reveal">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                        <i class="fa fa-microphone text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">表演形式</h3>
+                    <p class="text-gray-700">
+                        表演者通常自弹自唱，可一人表演，也可多人合作。主要分为"坐唱"和"走唱"两种形式，坐唱讲究唱腔技巧，走唱则增加了肢体动作和表演。
+                    </p>
+                </div>
+                
+                <!-- 特点2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 reveal" style="transition-delay: 0.2s">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                        <i class="fa fa-music text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">伴奏乐器</h3>
+                    <p class="text-gray-700">
+                        主要伴奏乐器有扬琴、坠胡、三弦、二胡等，其中扬琴为核心乐器，负责节奏控制和旋律衬托，坠胡则多用于装饰音和过门演奏。
+                    </p>
+                </div>
+                
+                <!-- 特点3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 reveal" style="transition-delay: 0.4s">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                        <i class="fa fa-volume-up text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">唱腔特点</h3>
+                    <p class="text-gray-700">
+                        唱腔婉转悠扬，音域宽广，融合了淮河两岸的民歌小调，形成了"高腔"、"平腔"、"悲腔"等多种唱腔，富有表现力和感染力。
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 代表曲目 -->
+            <div class="mt-20 reveal">
+                <h3 class="text-2xl font-serif font-bold text-center mb-12">代表曲目</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-3">传统曲目</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《包公案》系列</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《杨家将》选段</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《孟姜女》</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《小八义》</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《王天宝下苏州》</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-3">现代新创曲目</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《淮河新歌》</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《颍上新风尚》</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《振兴乡村谱新篇》</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《非遗传承少年强》</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-angle-right text-primary mt-1 mr-3"></i>
+                                    <span>《美好家园》</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 流传区域与地图 -->
+    <section class="py-24 bg-white/80 content-section">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- 左侧地图 -->
+                <div class="lg:w-1/3 w-full">
+                    <div class="map-container relative rounded-lg overflow-hidden shadow-xl">
+                        <!-- 颍上县地图 -->
+                        <img src="ysx.png" alt="颍上县地图" class="w-full h-auto">
+                        
+                        <!-- 地图上的点 -->
+                        <div class="map-point absolute top-1/3 left-1/2 w-5 h-5 bg-primary rounded-full z-10"></div>
+                        
+                        <!-- 连接线 -->
+                        <!-- <svg class="absolute inset-0 w-full h-full pointer-events-none z-20">
+                            <line class="connection-line" x1="50%" y1="33%" x2="100%" y2="25%" stroke="#8C1C13" stroke-width="2.5" stroke-linecap="round"></line>
+                        </svg> -->
+                    </div>
+                </div>
+                
+                <!-- 右侧内容 -->
+                <div class="lg:w-2/3 w-full">
+                    <div class="heritage-title">
+                        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-dark mb-6">流传区域</h2>
+                        <div class="w-20 h-1 bg-primary mb-8"></div>
+                    </div>
+                    
+                    <div class="heritage-content">
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                            颍上琴书主要流传于安徽省颍上县境内，以县城为中心，辐射周边的谢桥、南照、润河、八里河等乡镇。
+                        </p>
+                        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                            由于地理和文化交流的影响，颍上琴书在邻近的阜南、霍邱、寿县以及河南省固始县等淮河沿岸地区也有流传，形成了具有地域特色的艺术流派。
+                        </p>
+                        
+                        <div class="bg-primary/5 p-6 rounded-lg border-l-4 border-primary">
+                            <h4 class="font-bold text-lg mb-2">主要流传区域特点</h4>
+                            <p class="text-gray-700">
+                                这些地区多为淮河冲积平原，农业发达，民俗文化丰富，为琴书的产生和发展提供了肥沃的土壤。每逢春节、元宵等传统节日，琴书表演都是群众文化活动的重要组成部分。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 传承人介绍 -->
+    <section id="heritage" class="py-24 content-section">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <h5 class="text-primary uppercase tracking-widest mb-4">薪火相传</h5>
+                <h2 class="text-[clamp(1.75rem,5vw,3rem)] font-serif font-bold mb-6">传承人与保护现状</h2>
+                <p class="text-dark text-lg">
+                    一代代传承人用坚守与创新，让颍上琴书在新时代焕发出新的生机。
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="reveal">
+                    <img src="琴书素材/1.jpeg" alt="颍上琴书传承人" class="w-full h-auto rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                </div>
+                
+                <div class="reveal">
+                    <h3 class="text-2xl font-bold mb-4">代表性传承人：李志侠</h3>
+                    <p class="text-dark mb-6 text-lg">
+                        李志侠，1958年生，颍上琴书"东派"传人，省级非物质文化遗产代表性传承人。自幼跟随父亲学习琴书，从艺50多年余，精通扬琴、坠胡等多种乐器，唱腔浑厚圆润，表演生动传神。
+                    </p>
+                    <p class="text-dark mb-6 text-lg">
+                        他在继承传统的基础上，吸收其他艺术形式的精华，对颍上琴书进行创新，创作了多部反映新时代生活的作品，并培养了30余名弟子，为琴书的传承做出了重要贡献。
+                    </p>
+                    <blockquote class="border-l-4 border-primary pl-4 italic text-gray-600">
+                        "琴书是咱颍上人的根，只要有人愿意学，我就愿意教，让这门手艺传下去。"
+                    </blockquote>
+                </div>
+            </div>
+            
+            <!-- 保护措施 -->
+            <div class="reveal">
+                <h3 class="text-2xl font-serif font-bold text-center mb-12">保护与传承措施</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                            <i class="fa fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3">传承人培养</h4>
+                        <p class="text-gray-700">
+                            建立传承人制度，支持老艺人带徒传艺，在职业学校开设琴书专业课程，培养年轻传承人。
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                            <i class="fa fa-book"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3">资料整理</h4>
+                        <p class="text-gray-700">
+                            对传统曲目进行录音、录像和文字记录，建立数字化档案库，抢救濒危曲目。
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                            <i class="fa fa-theater-masks"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-3">展演活动</h4>
+                        <p class="text-gray-700">
+                            定期举办琴书展演、比赛活动，在文化旅游景区设立固定表演场所，扩大影响力。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 非遗故事 -->
+    <!-- <section class="pt-16 pb-24 bg-white/80 content-section">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-dark mb-6">琴书背后的故事</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    每一段弦音都承载着历史记忆，每一个故事都传递着文化精神。
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl mx-auto reveal">
+                <div class="p-8">
+                    <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-6">一把坠胡的传承</h3>
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-2/5">
+                            <img src="琴书素材/1.jpg" alt="琴书乐器" class="w-full h-full object-cover rounded-xl shadow-md">
+                        </div>
+                        <div class="md:w-3/5">
+                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                                张明山的那把坠胡已经有80多年历史了，是他的师父传给他的。这把琴见证了颍上琴书的兴衰变迁，也承载着三代传人的记忆。
+                            </p>
+                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                                文革期间，琴书被视为"四旧"，许多艺人被迫停止表演，乐器也被没收。张明山的师父冒着风险，将这把坠胡藏在村外的枯井中，才得以保存下来。
+                            </p>
+                            <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                                如今，这把坠胡依然在使用，虽然琴身已经斑驳，但拉出的声音却愈发醇厚。张明山说："这把琴不仅是一件乐器，更是我们琴书艺人的精神寄托，只要它还能发声，我们的琴书就不会失传。"
+                            </p>
+                            <blockquote class="border-l-4 border-secondary pl-4 italic text-gray-600">
+                                "琴会老，但琴声不会老，只要有人听，有人学，琴书就永远年轻。"
+                                <footer class="text-right mt-2 font-normal">—— 张明山</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- 底部区域 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-6">颍上琴书</h3>
+                    <p class="text-gray-400 mb-6">
+                        传承百年文脉，守护文化瑰宝，让非物质文化遗产在新时代焕发新活力。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+                            <i class="fa fa-youtube-play"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#overview" class="text-gray-400 hover:text-white transition-colors">概述</a></li>
+                        <li><a href="#history" class="text-gray-400 hover:text-white transition-colors">历史渊源</a></li>
+                        <li><a href="#performance" class="text-gray-400 hover:text-white transition-colors">表演形式</a></li>
+                        <li><a href="#heritage" class="text-gray-400 hover:text-white transition-colors">传承保护</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">联系我们</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">安徽省颍上县文化广播新闻出版局</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">0558-4412345</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-400">ysfeiyi@163.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2023 颍上县非物质文化遗产保护中心 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="qinshu.js"> </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+ @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .text-shadow-lg {
+                text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+            .reveal {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.8s ease;
+            }
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 全局样式 */
+        :root {
+            --primary: #8C1C13;
+            --secondary: #D9A566;
+            --dark: #333333;
+            --darker: #222222;
+            --light: #F8F8F8;
+        }
+        
+        body {
+            background-image: url('https://picsum.photos/id/325/1920/1080');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .content-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 10;
+        }
+        
+        .font-serif {
+            font-family: 'Noto Serif SC', serif;
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        
+        .text-secondary {
+            color: var(--secondary);
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary);
+        }
+        
+        /* 动画效果 */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .map-point {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.6s ease-out 0.5s, transform 0.6s ease-out 0.5s;
+        }
+        
+        .map-point.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .connection-line {
+            opacity: 0;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: opacity 0.3s ease-out 1s;
+        }
+        
+        .connection-line.visible {
+            opacity: 1;
+            animation: dash 1.2s ease-out 1s forwards;
+        }
+        
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }

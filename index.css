@@ -1,0 +1,243 @@
+/* type="text/tailwindcss" */
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .text-shadow-lg {
+                text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            }
+            .bg-blur {
+                backdrop-filter: blur(8px);
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .line-animation {
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                animation: dash 1s ease-in-out forwards;
+            }
+            @keyframes dash {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+            .reveal {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.8s ease;
+            }
+
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 固定背景图 */
+        /* body {
+            background-image: url('https://picsum.photos/id/1018/1920/1080');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        } */
+        
+        /* 内容区块样式 */
+        /* .content-section {
+            background-color: theme('colors.overlay');
+            position: relative;
+            z-index: 10;
+        } */
+        
+        /* 基础动画定义 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 地图相关动画 */
+        .map-container {
+            opacity: 0;
+            transition: opacity 1s ease-out;
+        }
+        
+        .map-container.visible {
+            opacity: 1;
+        }
+        
+        .map-point {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.6s ease-out 0.5s, transform 0.6s ease-out 0.5s;
+        }
+        
+        .map-point.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .connection-line {
+            opacity: 0;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: opacity 0.3s ease-out 1s;
+        }
+        
+        .connection-line.visible {
+            opacity: 1;
+            animation: dash 1.2s ease-out 1s forwards;
+        }
+        
+        .heritage-title {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out 2s, transform 0.8s ease-out 2s;
+        }
+        
+        .heritage-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .heritage-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out 2.5s, transform 0.8s ease-out 2.5s;
+        }
+        
+        .heritage-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* 导航栏滚动效果 */
+        .nav-scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+         /* 内容区块应用该颜色 */
+        .content-section {
+           background-color: rgba(255, 255, 255, 0.5);
+           position: relative;
+           z-index: 10;
+        }
+
+        /* 卡片堆叠样式 */
+        /* 卡片堆叠容器样式 */
+        /* 卡片堆叠容器样式 */
+        #stories .stack-container {
+            position: relative;
+            height: 750px; /* 进一步增加容器高度 */
+            overflow: hidden;
+            margin: 2rem auto;
+            max-width: 1500px; /* 增加最大宽度 */
+            padding: 0 1rem; /* 添加左右内边距防止溢出 */
+        }
+        
+        /* 卡片样式 */
+        .stacked-card {
+            /* 将过渡时间从0.5s增加到1.0s */
+            transition: all 2.0s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 700px !important;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: white;
+            border-radius: 1.5rem;
+            transform: rotate(0deg) !important;
+        }
+
+        /* 卡片内部图片区域 */
+        .stacked-card .card-image {
+            width: 45%;
+            height: 100%;
+        }
+
+        /* 卡片内容区域 */
+        .stacked-card .card-content {
+            overflow-y: auto;
+            max-height: 600px; /* 增加内容区域高度 */
+            padding: 2.5rem; /* 增加内边距 */
+        }
+
+        /* 卡片标题样式 */
+        .stacked-card h3 {
+            font-size: 2rem; /* 增大标题字体 */
+            margin-bottom: 1.25rem;
+        }
+
+        /* 卡片文本样式 */
+        .stacked-card p {
+            font-size: 1.2rem; /* 增大正文字体 */
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-transition {
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* 修复文字重叠问题 */
+        .stacked-card {
+            overflow-y: auto;
+            max-height: 450px;
+            padding-right: 1rem;
+        }
+
+        /* 确保文字不被缩放影响 */
+        .stacked-card {
+            transform-origin: center bottom;
+        }
+
+        /* 确保文字不被溢出隐藏影响 */
+        .stacked-card .card-content {
+            overflow-y: auto;
+            max-height: 380px;
+            padding-right: 1rem;        }
+
+        #bg-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        
+        /* 可选：添加半透明覆盖层 */
+        #bg-video::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }

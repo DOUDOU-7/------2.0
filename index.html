@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颍上县非物质文化遗产</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    
+    
+</head>
+<body class="font-sans text-dark antialiased">
+    <!-- 视频背景 -->
+    <video id="bg-video" autoplay muted loop>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 py-4">
+        <div class="container mx-auto px-4 md:px-8">
+            <nav class="flex justify-between items-center">
+                <a href="#hero" class="text-2xl font-serif font-bold text-white text-shadow-lg">颍上非遗</a>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#overview" class="text-white hover:text-secondary transition-colors text-shadow">概述</a>
+                    <a href="#heritage" class="text-white hover:text-secondary transition-colors text-shadow">非遗项目</a>
+                    <a href="#stories" class="text-white hover:text-secondary transition-colors text-shadow">非遗故事</a>
+                    <a href="#preservation" class="text-white hover:text-secondary transition-colors text-shadow">保护传承</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menu-toggle" class="md:hidden text-white text-2xl">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </nav>
+            
+            <!-- 移动端导航菜单 -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 bg-white/95 bg-blur rounded-lg shadow-lg p-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#intro" class="text-dark hover:text-primary transition-colors py-2">概述</a>
+                    <a href="#heritage" class="text-dark hover:text-primary transition-colors py-2">非遗项目</a>
+                    <a href="#stories" class="text-dark hover:text-primary transition-colors py-2">非遗故事</a>
+                    <a href="#preservation" class="text-dark hover:text-primary transition-colors py-2">保护传承</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区/首页 -->
+    <section id="hero" class="h-screen relative flex items-center justify-center overflow-hidden">
+        <!-- 背景覆盖层 -->
+        <div class="absolute inset-0 bg-dark/40 z-0"></div>
+        
+        <!-- 英雄区内容 -->
+        <div class="container mx-auto px-4 z-10 text-center">
+            <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-serif font-bold text-white mb-6 leading-tight text-shadow-lg">
+                颍上县<br>非物质文化遗产
+            </h1>
+            <p class="text-[clamp(1rem,3vw,1.5rem)] text-white max-w-3xl mx-auto mb-10 text-shadow">
+                传承千年文脉，守护文化瑰宝
+            </p>
+            <a href="#intro" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                探索非遗 <i class="fa fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+        
+        <!-- 向下滚动提示 -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fa fa-angle-down text-3xl"></i>
+        </div>
+    </section>
+
+     <!-- 简介部分 -->
+  <section id="intro" class="py-24 bg-darker relative overflow-hidden content-section">
+    <div class="container mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <h5 class="text-primary uppercase tracking-widest mb-4">关于颍上非遗</h5>
+          <h2 class="text-[clamp(1.75rem,5vw,3rem)] font-bold mb-8 leading-tight">
+            千年古邑的<br>文化瑰宝
+          </h2>
+          <p class="text-dark mb-6 text-lg">
+            颍上县位于安徽省阜阳市，历史悠久，文化灿烂，是淮河文化的重要发源地之一。这里孕育了丰富多彩的非物质文化遗产，它们是颍上人民智慧的结晶，也是中华文化宝库中的珍贵财富。
+          </p>
+          <p class="text-dark mb-8 text-lg">
+            颍上非遗涵盖民间文学、传统音乐、传统舞蹈、传统戏剧、传统技艺、传统医药、民俗等多个领域，承载着颍上地区特有的历史记忆和文化基因。
+          </p>
+          <div class="flex items-center gap-6">
+            <div class="flex -space-x-4">
+              <img src="琴书素材/1.jpeg" alt="传承人照片" class="w-12 h-12 rounded-full border-2 border-darker">
+              <img src="大鼓书素材/2.jpg" alt="传承人照片" class="w-12 h-12 rounded-full border-2 border-darker">
+              <img src="琴书素材/3.jpeg" alt="传承人照片" class="w-12 h-12 rounded-full border-2 border-darker">
+            </div>
+            <div>
+              <p class="text-dark">超过 <span class="text-primary font-semibold">50</span> 位非遗传承人</p>
+              <p class="text-dark text-sm">致力于文化传承与保护</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative reveal">
+          <div class="absolute -top-10 -left-10 w-64 h-64 bg-primary/10 rounded-full filter blur-3xl"></div>
+          <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full filter blur-3xl"></div>
+          
+          <div class="relative grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <img src="琴书素材/1.jpeg" alt="颍上非遗项目展示" class="w-full h-64 object-cover rounded-lg transform hover:scale-105 transition-transform duration-500">
+              <img src="琴书素材/2.jpeg" alt="颍上非遗项目展示" class="w-full h-40 object-cover rounded-lg transform hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="space-y-4 pt-8">
+              <img src="大鼓书素材/1.jpg" alt="颍上非遗项目展示" class="w-full h-40 object-cover rounded-lg transform hover:scale-105 transition-transform duration-500">
+              <img src="大鼓书素材/2.jpg" alt="颍上非遗项目展示" class="w-full h-64 object-cover rounded-lg transform hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+          
+          <!-- <div class="absolute -bottom-6 -left-6 bg-gray-custom p-4 rounded-lg shadow-xl">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                <i class="fa fa-certificate text-xl"></i>
+              </div>
+              <div>
+                <p class="font-semibold">国家级非遗</p>
+                <p class="text-gray-400 text-sm">3 项</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 历史渊源部分 -->
+  <section id="history" class="py-24 bg-darker relative overflow-hidden content-section">
+    <div class="container mx-auto px-6 md:px-12 relative z-10"></div>
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+        <h5 class="text-primary uppercase tracking-widest mb-4">源远流长</h5>
+        <h2 class="text-[clamp(1.75rem,5vw,3rem)] font-bold mb-6">历史渊源</h2>
+        <p class="text-dark text-lg">
+          颍上非物质文化遗产的形成与发展，与这片土地的历史变迁密不可分，承载着数千年的文明记忆。
+        </p>
+      </div>
+      
+      <div class="relative">
+        <!-- 时间线 -->
+        <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-custom transform -translate-x-1/2"></div>
+        
+        <!-- 时间线内容 -->
+        <div class="space-y-24">
+          <!-- 时间点1 -->
+          <div class="md:grid md:grid-cols-2 gap-12 items-center reveal">
+            <div class="md:text-right order-2 md:order-1">
+              <h3 class="text-2xl font-bold mb-4">先秦时期</h3>
+              <p class="text-dark mb-4 font-serif">
+                管仲辅佐齐桓公成为春秋五霸之首，推行 “仓廪实而知礼节” 的治国理念，发展经济、改革军制。颍上现存管鲍祠、管仲老街等遗迹，“管仲的传说” 被列为国家级非遗
+              </p>
+              <p class="text-dark">约公元前 723 - 前 645 年</p>
+            </div>
+            
+            <div class="hidden md:block absolute left-1/2 w-6 h-6 rounded-full bg-primary transform -translate-x-1/2"></div>
+            
+            <div class="order-1 md:order-2">
+              <img src="guanzhong.jpg" alt="先秦时期文化遗迹" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+            </div>
+          </div>
+          
+          <!-- 时间点2 -->
+          <div class="md:grid md:grid-cols-2 gap-12 items-center reveal">
+            <div>
+              <img src="sushi.jpg" alt="汉唐时期文化发展" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+            </div>
+            
+            <div class="hidden md:block absolute left-1/2 w-6 h-6 rounded-full bg-primary transform -translate-x-1/2"></div>
+            
+            <div class="md:text-left">
+              <h3 class="text-2xl font-bold mb-4">汉唐宋元时期</h3>
+              <p class="text-dark mb-4 font-serif">
+                苏轼（1037-1101 年）到访时间：北宋元祐六年（1091 年） “人日” 诗赋
+              </p>
+              <p class="text-dark">公元前202年 - 公元907年</p>
+            </div>
+          </div>
+          
+          <!-- 时间点3 -->
+          <div class="md:grid md:grid-cols-2 gap-12 items-center reveal">
+            <div class="md:text-right order-2 md:order-1">
+              <h3 class="text-2xl font-bold mb-4">汉唐宋元时期</h3>
+              <p class="text-dark mb-4 font-serif">
+                欧阳修曾多次游历颍州，喜爱颍州西湖景色，在此留下诸多诗篇，其相关作品对颍州文化发展有深远影响，也间接提升了颍上县所在地区的文化底蕴。
+              </p>
+              <p class="text-dark">公元1007-1072 年</p>
+            </div>
+            
+            <div class="hidden md:block absolute left-1/2 w-6 h-6 rounded-full bg-primary transform -translate-x-1/2"></div>
+            
+            <div class="order-1 md:order-2">
+              <img src="ouyangxiupng.png" alt="宋元明清时期文化繁荣" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+            </div>
+          </div>
+          
+          <!-- 时间点4 -->
+          <div class="md:grid md:grid-cols-2 gap-12 items-center reveal">
+            <div>
+              <img src="翁.jpg" alt="近现代非遗保护" class="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+            </div>
+            
+            <div class="hidden md:block absolute left-1/2 w-6 h-6 rounded-full bg-primary transform -translate-x-1/2"></div>
+            
+            <div class="md:text-left">
+              <h3 class="text-2xl font-bold mb-4">明清时期至今</h3>
+              <p class="text-dark mb-4 font-serif">
+                翁同龢（1830-1904 年）到访时间：清朝光绪年间。代表作：《瓶庐诗稿》。事迹：关注颍上兰亭石刻的历史，为其题诗《颍井兰亭》《颍井碎石》，记录石刻从发现到被毁的过程
+              </p>
+              <p class="text-dark">1912年 - 至今</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 文化价值部分 -->
+  <section id="values" class="py-24 bg-darker relative overflow-hidden content-section">
+    <div class="container mx-auto px-6 md:px-12 relative z-10"></div>
+    
+    <div class="container mx-auto px-6 md:px-12 relative z-10">
+      <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+        <h5 class="text-primary uppercase tracking-widest mb-4">价值所在</h5>
+        <h2 class="text-[clamp(1.75rem,5vw,3rem)] font-bold mb-6">文化价值</h2>
+        <p class="text-dark text-lg">
+          颍上非物质文化遗产不仅是当地人民的精神财富，更是中华民族文化多样性的生动体现，具有多方面的重要价值。
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 价值1 -->
+        <div class="bg-gray-custom p-8 rounded-xl hover:shadow-lg hover:shadow-primary/10 transition-all transform hover:-translate-y-1 reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-history text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">历史价值</h3>
+          <p class="text-dark">
+            颍上非遗是研究淮河文化、江淮地区历史变迁的活态史料，为理解中国传统文化的形成与发展提供了重要视角。
+          </p>
+        </div>
+        
+        <!-- 价值2 -->
+        <div class="bg-gray-custom p-8 rounded-xl hover:shadow-lg hover:shadow-primary/10 transition-all transform hover:-translate-y-1 reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-users text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">社会价值</h3>
+          <p class="text-dark">
+            非遗项目在凝聚社区共识、增强文化认同、促进社会和谐方面发挥着重要作用，是维系地方社会关系的重要纽带。
+          </p>
+        </div>
+        
+        <!-- 价值3 -->
+        <div class="bg-gray-custom p-8 rounded-xl hover:shadow-lg hover:shadow-primary/10 transition-all transform hover:-translate-y-1 reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-paint-brush text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">艺术价值</h3>
+          <p class="text-dark">
+            颍上非遗蕴含着独特的审美观念和艺术表现手法，形成了鲜明的地方风格，丰富了中国传统艺术的表现形式。
+          </p>
+        </div>
+        
+        <!-- 价值4 -->
+        <div class="bg-gray-custom p-8 rounded-xl hover:shadow-lg hover:shadow-primary/10 transition-all transform hover:-translate-y-1 reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-book text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">科学价值</h3>
+          <p class="text-dark">
+            传统技艺、医药等非遗项目中蕴含着丰富的科学知识和实践智慧，为现代科技和医学发展提供了有益借鉴。
+          </p>
+        </div>
+        
+        <!-- 价值5 -->
+        <div class="bg-gray-custom p-8 rounded-xl hover:shadow-lg hover:shadow-primary/10 transition-all transform hover:-translate-y-1 reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-globe text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">文化多样性价值</h3>
+          <p class="text-dark">
+            作为中华文化的有机组成部分，颍上非遗展现了文化多样性，是世界文化宝库中独具特色的宝贵财富。
+          </p>
+        </div>
+        
+        <!-- 价值6 -->
+        <div class="bg-gray-custom p-8 rounded-xl hover:shadow-lg hover:shadow-primary/10 transition-all transform hover:-translate-y-1 reveal">
+          <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-6">
+            <i class="fa fa-leaf text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">经济价值</h3>
+          <p class="text-dark">
+            在保护传承的基础上，颍上非遗为地方经济发展注入新活力，成为文化旅游和特色产业发展的重要资源。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 视差横幅 -->
+  <!-- <section class="py-32 parallax-bg relative" style="background-image: url('https://picsum.photos/id/325/1920/1080');">
+    <div class="absolute inset-0 bg-dark/70"></div>
+    <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
+      <h2 class="text-[clamp(1.5rem,4vw,2.5rem)] font-bold mb-6 text-shadow reveal">
+        "非遗是民族的记忆，也是未来的灵感"
+      </h2>
+      <p class="text-xl text-gray-200 mb-8 reveal">—— 颍上非遗传承理念</p>
+      <a href="#protection" class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full transition-all transform hover:scale-105 font-medium reveal">
+        支持非遗保护 <i class="fa fa-heart ml-2"></i>
+      </a>
+    </div>
+  </section> -->
+
+    <!-- 非遗项目展示 -->
+    <section id="heritage" class="py-28 content-section">
+        <div class="container mx-auto px-6 md:px-12">
+            <!-- 标题部分 -->
+            <div class="max-w-3xl mb-16 reveal">
+                <span class="inline-block text-primary font-medium text-sm mb-4 tracking-wider uppercase">非遗项目</span>
+                <h2 class="text-[clamp(2rem,6vw,3.5rem)] font-serif font-bold text-dark mb-6 leading-tight">
+                    探索颍上的<br class="hidden md:block">珍贵非遗项目
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed max-w-2xl">
+                    颍上县拥有多项国家级、省级和市级非物质文化遗产，这些项目各具特色，展现了颍上丰富的文化多样性和深厚的历史底蕴。
+                </p>
+            </div>
+            
+            <!-- 分类筛选 -->
+            <!-- <div class="flex flex-wrap gap-4 mb-12 reveal" style="transition-delay: 0.2s">
+                <button class="px-6 py-2 bg-primary text-white rounded-full text-sm font-medium">全部项目</button>
+                <button class="px-6 py-2 bg-white hover:bg-gray-100 rounded-full text-sm font-medium transition-colors">国家级</button>
+                <button class="px-6 py-2 bg-white hover:bg-gray-100 rounded-full text-sm font-medium transition-colors">省级</button>
+                <button class="px-6 py-2 bg-white hover:bg-gray-100 rounded-full text-sm font-medium transition-colors">市级</button>
+                <button class="px-6 py-2 bg-white hover:bg-gray-100 rounded-full text-sm font-medium transition-colors">传统舞蹈</button>
+                <button class="px-6 py-2 bg-white hover:bg-gray-100 rounded-full text-sm font-medium transition-colors">传统技艺</button>
+                <button class="px-6 py-2 bg-white hover:bg-gray-100 rounded-full text-sm font-medium transition-colors">传统音乐</button>
+            </div> -->
+            
+            <!-- 横向滚动卡片 -->
+            <div class="relative perspective">
+                <!-- 滚动提示 -->
+                <div class="absolute top-1/2 -left-4 md:left-0 transform -translate-y-1/2 z-20 hidden md:block">
+                    <button class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-dark hover:text-primary transition-colors">
+                        <i class="fa fa-chevron-left"></i>
+                    </button>
+                </div>
+                
+                <!-- 横向滚动容器 -->
+                <div class="overflow-x-auto pb-8 scrollbar-thin pl-0 md:pl-16">
+                    <div class="flex space-x-6 min-w-max">
+                        <!-- 非遗项目1 -->
+                        <div class="heritage-card bg-white rounded-2xl overflow-hidden shadow-sm w-[360px] flex-shrink-0 reveal" style="transition-delay: 0.3s">
+                            <div class="h-56 overflow-hidden">
+                                <img src="huagudeng.jpg" alt="颍上花鼓灯表演" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                            </div>
+                            <div class="p-7">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">国家级非遗</span>
+                                    <span class="text-gray-500 text-sm">传统舞蹈</span>
+                                </div>
+                                <h3 class="text-xl font-serif font-bold mb-3">颍上花鼓灯</h3>
+                                <p class="text-gray-700 mb-5 line-clamp-3">
+                                    颍上花鼓灯是安徽省著名的传统民间舞蹈，集舞蹈、音乐、歌唱于一体，风格热烈奔放，具有浓郁的地方特色。
+                                </p>
+                                <a href="qinshu.html" class="inline-flex items-center text-primary font-medium hover:underline">
+                                    了解详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- 非遗项目2 -->
+                        <div class="heritage-card bg-white rounded-2xl overflow-hidden shadow-sm w-[360px] flex-shrink-0 reveal" style="transition-delay: 0.4s">
+                            <div class="h-56 overflow-hidden">
+                                <img src="剪纸素材/jianzhi1.jpg" alt="颍上剪纸艺术作品" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                            </div>
+                            <div class="p-7">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">省级非遗</span>
+                                    <span class="text-gray-500 text-sm">传统技艺</span>
+                                </div>
+                                <h3 class="text-xl font-serif font-bold mb-3">颍上剪纸</h3>
+                                <p class="text-gray-700 mb-5 line-clamp-3">
+                                    颍上剪纸历史悠久，以其精细的工艺、丰富的题材和独特的风格著称，展现了当地人民的生活情趣和审美追求。
+                                </p>
+                                <a href="#papercutting" class="inline-flex items-center text-primary font-medium hover:underline">
+                                    了解详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- 非遗项目3 -->
+                        <div class="heritage-card bg-white rounded-2xl overflow-hidden shadow-sm w-[360px] flex-shrink-0 reveal" style="transition-delay: 0.5s">
+                            <div class="h-56 overflow-hidden">
+                                <img src="大鼓书素材/2.jpg" alt="颍上大鼓书表演" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                            </div>
+                            <div class="p-7">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">市级非遗</span>
+                                    <span class="text-gray-500 text-sm">传统音乐</span>
+                                </div>
+                                <h3 class="text-xl font-serif font-bold mb-3">颍上大鼓书</h3>
+                                <p class="text-gray-700 mb-5 line-clamp-3">
+                                    颍上大鼓书是一种传统说唱艺术，表演者一人多角，说唱结合，内容多取材于民间故事和历史传说，深受群众喜爱。
+                                </p>
+                                <a href="#dagushu" class="inline-flex items-center text-primary font-medium hover:underline">
+                                    了解详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 非遗项目4 -->
+                        <div class="heritage-card bg-white rounded-2xl overflow-hidden shadow-sm w-[360px] flex-shrink-0 reveal" style="transition-delay: 0.6s">
+                            <div class="h-56 overflow-hidden">
+                                <img src="琴书素材/1.jpeg" alt="颍上琴书表演" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                            </div>
+                            <div class="p-7">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">市级非遗</span>
+                                    <span class="text-gray-500 text-sm">传统音乐</span>
+                                </div>
+                                <h3 class="text-xl font-serif font-bold mb-3">颍上琴书</h3>
+                                <p class="text-gray-700 mb-5 line-clamp-3">
+                                    颍上琴书是流传于当地的传统说唱艺术，表演者自弹自唱，唱腔婉转悠扬，内容多取材于民间故事和历史传说。
+                                </p>
+                                <a href="#qinshu" class="inline-flex items-center text-primary font-medium hover:underline">
+                                    了解详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- 非遗项目5 -->
+                        <div class="heritage-card bg-white rounded-2xl overflow-hidden shadow-sm w-[360px] flex-shrink-0 reveal" style="transition-delay: 0.7s">
+                            <div class="h-56 overflow-hidden">
+                                <img src="泥人素材/1.jpg" alt="颍上泥塑作品" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
+                            </div>
+                            <div class="p-7">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">省级非遗</span>
+                                    <span class="text-gray-500 text-sm">传统技艺</span>
+                                </div>
+                                <h3 class="text-xl font-serif font-bold mb-3">颍上泥塑</h3>
+                                <p class="text-gray-700 mb-5 line-clamp-3">
+                                    颍上泥塑以其造型生动、色彩艳丽而闻名，题材多为民间传说、吉祥图案等，具有厚的乡土气息和地方特色。
+                                </p>
+                                <a href="#nisu" class="inline-flex items-center text-primary font-medium hover:underline">
+                                    了解详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 滚动提示 -->
+                <div class="absolute top-1/2 -right-4 md:right-0 transform -translate-y-1/2 z-20 hidden md:block">
+                    <button class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-dark hover:text-primary transition-colors">
+                        <i class="fa fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 查看更多按钮 -->
+            <!-- <div class="mt-16 text-center reveal" style="transition-delay: 0.4s">
+                <a href="#" class="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium py-3 px-10 rounded-full transition-all duration-300">
+                    查看全部非遗项目 <i class="fa fa-long-arrow-right ml-2"></i>
+                </a>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- 非遗项目详情页：颍上琴书 -->
+    <section id="qinshu" class="py-24 content-section">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- 左侧地图 -->
+                <div class="lg:w-1/3 w-full">
+                    <div class="map-container relative rounded-lg overflow-hidden shadow-xl">
+                        <!-- 颍上县地图 -->
+                        <img src="ysx.png" alt="颍上县地图" class="w-full h-auto">
+                        
+                        <!-- 地图上的点 -->
+                        <div class="map-point absolute top-1/3 left-1/2 w-5 h-5 bg-primary rounded-full z-10"></div>
+                        
+                        <!-- 连接线 -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none z-20">
+                            <line class="connection-line" x1="50%" y1="33%" x2="100%" y2="25%" stroke="#8C1C13" stroke-width="2.5" stroke-linecap="round"></line>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- 右侧内容 -->
+                <div class="lg:w-2/3 w-full">
+                    <!-- 标题区域 -->
+                    <div class="heritage-title">
+                        <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full mb-4">市级非遗</span>
+                        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-dark mb-6">颍上琴书</h2>
+                        <div class="w-20 h-1 bg-primary mb-8"></div>
+                    </div>
+                    
+                    <!-- 主要内容 -->
+                    <div class="heritage-content">
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                            颍上琴书是一种流传于颍上地区的传统说唱艺术，距今已有200多年历史。表演者通常自弹自唱，伴奏乐器主要有扬琴、坠胡、三弦等。琴书的唱腔婉转悠扬，内容多取材于民间故事、历史传说和社会生活。
+                        </p>
+                        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                            颍上琴书的表演形式灵活多样，可一人表演，也可多人合作。唱词通俗易懂，曲调富有地方特色，深受当地群众喜爱。传统曲目有《包公案》、《杨家将》等，现代也创作了许多反映新生活的曲目。
+                        </p>
+                        
+                        <!-- 图片展示 -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                            <img src="琴书素材/1.jpeg" alt="琴书表演现场" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <img src="琴书素材/2.jpeg" alt="琴书乐器展示" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        </div>
+                        
+                        <!-- 了解更多按钮 -->
+                        <div class="flex justify-end">
+                            <a href="qinshu.html" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                                了解更多 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 非遗项目详情页：颍上剪纸 -->
+    <section id="papercutting" class="py-24 content-section">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- 左侧地图 -->
+                <div class="lg:w-1/3 w-full">
+                    <div class="map-container relative rounded-lg overflow-hidden shadow-xl">
+                        <!-- 颍上县地图 -->
+                        <img src="ysx.png" alt="颍上县地图" class="w-full h-auto">
+                        
+                        <!-- 地图上的点 -->
+                        <div class="map-point absolute top-2/3 left-1/3 w-5 h-5 bg-primary rounded-full z-10"></div>
+                        
+                        <!-- 连接线 -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none z-20">
+                            <line class="connection-line" x1="33%" y1="67%" x2="100%" y2="30%" stroke="#8C1C13" stroke-width="2.5" stroke-linecap="round"></line>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- 右侧内容 -->
+                <div class="lg:w-2/3 w-full">
+                    <!-- 标题区域 -->
+                    <div class="heritage-title">
+                        <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full mb-4">省级非遗</span>
+                        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-dark mb-6">颍上剪纸</h2>
+                        <div class="w-20 h-1 bg-primary mb-8"></div>
+                    </div>
+                    
+                    <!-- 主要内容 -->
+                    <div class="heritage-content">
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                            颍上剪纸是安徽省传统民间艺术的瑰宝，历史可追溯至清代。颍上剪纸以其精细的工艺、丰富的题材和独特的艺术风格闻名，展现了当地人民的生活情趣和审美追求。
+                        </p>
+                        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                            颍上剪纸多以红色宣纸为材料，运用剪、刻、撕等多种技法，题材涵盖花鸟鱼虫、人物故事、吉祥图案等。其作品构图饱满，线条流畅，刀法细腻，既有北方剪纸的粗犷大气，又有南方剪纸的纤巧秀丽。
+                        </p>
+                        
+                        <!-- 图片展示 -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                            <img src="剪纸素材/jianzhi2.jpg" alt="传统剪纸作品" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <img src="剪纸素材/jianzhi3.jpg" alt="剪纸制作过程" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        </div>
+                        
+                        <!-- 了解更多按钮 -->
+                        <div class="flex justify-end">
+                            <a href="#" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                                了解更多 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 非遗项目详情页：颍上大鼓书 -->
+    <section id="dagushu" class="py-24 content-section">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- 左侧地图 -->
+                <div class="lg:w-1/3 w-full">
+                    <div class="map-container relative rounded-lg overflow-hidden shadow-xl">
+                        <!-- 颍上县地图 -->
+                        <img src="ysx.png" alt="颍上县地图" class="w-full h-auto">
+                        
+                        <!-- 地图上的点 -->
+                        <div class="map-point absolute top-1/2 left-2/3 w-5 h-5 bg-primary rounded-full z-10"></div>
+                        
+                        <!-- 连接线 -->
+                        <svg class="absolute inset-0 w-full h-full pointer-events-none z-20">
+                            <line class="connection-line" x1="67%" y1="50%" x2="100%" y2="20%" stroke="#8C1C13" stroke-width="2.5" stroke-linecap="round"></line>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- 右侧内容 -->
+                <div class="lg:w-2/3 w-full">
+                    <!-- 标题区域 -->
+                    <div class="heritage-title">
+                        <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full mb-4">市级非遗</span>
+                        <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-dark mb-6">颍上大鼓书</h2>
+                        <div class="w-20 h-1 bg-primary mb-8"></div>
+                    </div>
+                    
+                    <!-- 主要内容 -->
+                    <div class="heritage-content">
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                            颍上大鼓书是流行于颍上及周边地区的一种传统说唱艺术，距今已有300多年历史。表演者一人多角，说唱结合，以大鼓为主要伴奏乐器，辅以三弦、坠胡等，内容多取材于民间故事和历史传说。
+                        </p>
+                        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                            颍上大鼓书的表演形式独特，艺人坐在椅子上，左手持铜板，右手击鼓，边打边唱，时而模拟不同人物的声音和动作，一人能扮演多个角色。其唱腔高亢激昂，节奏鲜明，具有很强的表现力和感染力。
+                        </p>
+                        
+                        <!-- 图片展示 -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                            <img src="大鼓书素材/1.jpg" alt="大鼓书表演" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <img src="大鼓书素材/2.jpg" alt="大鼓书传承人" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        </div>
+                        
+                        <!-- 了解更多按钮 -->
+                        <div class="flex justify-end">
+                            <a href="#" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                                了解更多 <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 非遗故事 -->
+<section id="stories" class="pt-16 pb-24 content-section">
+    <div class="container mx-auto px-4 md:px-8 relative z-10">
+        <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-dark mb-6">非遗背后的故事</h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                每一项非物质文化遗产背后都有着动人的故事，这些故事承载着历史记忆，传递着文化精神。
+            </p>
+        </div>
+
+        <!-- 卡片堆叠容器（增大尺寸） -->
+        <div class="stack-container relative h-[700px] w-full md:w-[1000px] mx-auto p-0">
+            <!-- 卡片1：泥人 -->
+            <div class="stacked-card absolute left-0 right-0 top-0 bottom-0 bg-white rounded-2xl p-6 card-shadow border border-gray-100 card-transition" data-index="0">
+                <div class="flex h-full">
+                    <!-- 左侧图片 -->
+                    <div class="w-2/5 p-2">
+                        <img src="泥人素材/4.jpg" alt="泥人表演" class="w-full h-full object-cover rounded-xl">
+                    </div>
+
+                    <!-- 右侧文字 -->
+                    <div class="w-3/5 p-6 overflow-y-auto" style="max-height: 450px;">
+                        <span class="bg-primary text-white text-sm px-3 py-1 rounded-full">市级非遗</span>
+                        <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-4 mt-2">独特的泥人情缘</h3>
+                        <p class="text-gray-700 mb-6 text-lg">
+                            自小酷爱美术，几十年来坚持将手捏泥人这项传统技艺视为一生的爱好和事业。 从小在农村长大的他，非常了解当地农民生活的喜怒哀乐，多年来创作了很多以农民素材为主题的艺术作品，其中《分别》《等待》《归来》等以“留守儿童”为题材的作品生动感人，引人泪下。 
+                        </p>
+                        <blockquote class="pl-4 italic text-gray-600 mb-6">
+                            "泥人不仅是一种技艺，更是我们颍上人的精神寄托。只要还有一个人愿意学，我就会一直教下去。"
+                            <footer class="text-right mt-2 font-normal">—— 陶传丰，泥人传承人</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 卡片2：剪纸艺术 -->
+            <!-- <div class="stacked-card absolute left-0 right-0 top-0 bottom-0 bg-white rounded-2xl p-6 card-shadow border border-gray-100 card-transition" data-index="1">
+                <div class="flex h-full">
+                    
+                    <div class="w-2/5 p-2">
+                        <img src="https://picsum.photos/id/104/500/700" alt="传统剪纸作品" class="w-full h-full object-cover rounded-xl">
+                    </div>
+
+                    
+                    <div class="w-3/5 p-6 overflow-y-auto" style="max-height: 450px;">
+                        <span class="bg-primary text-white text-sm px-3 py-1 rounded-full">市级非遗</span>
+                        <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-4">剪纸艺人的坚守</h3>
+                        <p class="text-gray-700 mb-6 text-lg">
+                            王秀兰老人从事剪纸艺术60余年，她的作品融合了颍上民间故事与传统吉祥图案，一把剪刀、一张红纸，在她手中变成了栩栩如生的艺术珍品。
+                        </p>
+                        <blockquote class="border-l-4 border-secondary pl-4 italic text-gray-600 mb-6">
+                            "剪纸要用心，每一刀都藏着故事，我要把这些故事剪给更多人看。"
+                            <footer class="text-right mt-2 font-normal">—— 王秀兰，剪纸技艺传承人</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- 卡片3：安徽琴书 -->
+            <div class="stacked-card absolute left-0 right-0 top-0 bottom-0 bg-white rounded-2xl p-6 card-shadow border border-gray-100 card-transition" data-index="2">
+                <div class="flex h-full">
+                    <!-- 左侧图片 -->
+                    <div class="w-2/5 p-2">
+                        <img src="琴书素材/1.jpeg" alt="琴书表演" class="w-full h-full object-cover rounded-xl">
+                    </div>
+
+                    <!-- 右侧文字 -->
+                    <div class="w-3/5 p-6 overflow-y-auto" style="max-height: 450px;">
+                        <span class="bg-primary text-white text-sm px-3 py-1 rounded-full">市级非遗</span>
+                        <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-4">百年琴书的新生</h3>
+                        <p class="text-gray-700 mb-6 text-lg">
+                            颍上琴书是安徽省级非物质文化遗产，年轻演员李志侠将现代舞台技术与传统唱腔结合，让这门古老艺术在新时代焕发出新的生命力。
+                        </p>
+                        <blockquote class="border-l-4 border-primary pl-4 italic text-gray-600 mb-6">
+                            "传统不是守旧，创新才能让琴书活在当下。"
+                            <footer class="text-right mt-2 font-normal">—— 李志侠，琴书演员</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 滚动提示 -->
+        <!-- <div class="flex justify-center mt-12 text-gray-500 animate-bounce">
+            <i class="fa fa-mouse-pointer mr-2"></i>
+            <span>滚动查看更多非遗故事</span>
+        </div> -->
+    </div>
+</section>
+
+    <!-- 保护与传承 -->
+    <section id="preservation" class="py-24 content-section">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-dark mb-6">保护与传承</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    非物质文化遗产的保护与传承是一项系统工程，需要全社会的共同努力，让这些珍贵的文化遗产得以延续。
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-serif font-semibold mb-6">传承之路，任重道远</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        近年来，颍上县政府高度重视非物质文化遗产的保护工作，通过建立非遗保护中心、开展传承人培训、举办非遗展演活动等多种方式，推动非遗的活态传承。
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-700">建立非遗档案数据库，对全县非遗项目进行系统梳理和记录</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-700">在中小学开设非遗课程，培养青少年对传统文化的兴趣</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-700">举办一年一度的非遗文化节，搭建展示和交流平台</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-700">支持传承人开展传习活动，鼓励创新与发展</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md">
+                        参与保护 <i class="fa fa-handshake-o ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 fade-in" style="transition-delay: 0.3s">
+                    <div class="space-y-4">
+                        <img src="保护素材/1.jpg" alt="非遗传承人教学" class="w-full h-auto rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <img src="保护素材/2.jpg" alt="非遗进校园活动" class="w-full h-auto rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <img src="保护素材/3.jpg" alt="非遗文化节展示" class="w-full h-auto rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                        <img src="保护素材/4.jpg" alt="传统工艺制作过程" class="w-full h-auto rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark/90 text-white py-12 relative z-10">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">颍上非遗</h3>
+                    <p class="text-gray-400 mb-4">
+                        传承千年文脉，守护文化瑰宝，让颍上非物质文化遗产绽放时代光彩。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-wechat text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#overview" class="text-gray-400 hover:text-white transition-colors">非遗概述</a></li>
+                        <li><a href="#heritage" class="text-gray-400 hover:text-white transition-colors">非遗项目</a></li>
+                        <li><a href="#stories" class="text-gray-400 hover:text-white transition-colors">非遗故事</a></li>
+                        <li><a href="#preservation" class="text-gray-400 hover:text-white transition-colors">保护传承</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4">联系我们</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">安徽省颍上县文化和旅游局</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">0558-xxxxxxx</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-gray-400 mt-1 mr-3"></i>
+                            <span class="text-gray-400">info@yingshangfeiyi.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 颍上县非物质文化遗产保护中心 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-all duration-300 opacity-0 translate-y-10 z-50">
+        <i class="fa fa-arrow-up"></i>
+    </button>    
+    <script src="index.js"></script>
+</body>
+</html>
