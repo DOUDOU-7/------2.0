@@ -71,7 +71,8 @@
             // 滚动时检查
             window.addEventListener('scroll', function() {
             // 其他滚动相关代码...
-  
+
+                        
             // 滚动显示动画
             revealElements();
             });
@@ -306,4 +307,75 @@
         }
 
         // 页面加载完成后初始化
-        window.addEventListener('load', initHeritageCardStack);
+        window.addEventListener('load', function() {
+            initHeritageCardStack();
+            // 立即初始化轮播，不需要额外延迟
+            initFeiyiCarousel();
+        });
+        
+        // 非遗项目轮播功能
+        function initFeiyiCarousel() {
+            const 轮播图片 = document.querySelectorAll('.轮播图片');
+            const 轮播文字 = document.querySelectorAll('.轮播文字-item');
+            const 轮播指示器 = document.querySelectorAll('.轮播指示器-item');
+            const 轮播容器 = document.querySelector('.非遗轮播-container');
+            let 当前索引 = 0;
+            let 轮播定时器 = null;
+            const 轮播间隔 = 5000; // 5秒切换一次
+        
+            // 显示指定索引的内容
+            function 显示内容(索引) {
+                // 隐藏所有图片和文字
+                轮播图片.forEach(img => img.style.opacity = '0');
+                轮播文字.forEach(text => text.style.opacity = '0');
+                轮播指示器.forEach(indicator => {
+                    indicator.classList.remove('bg-primary', 'scale-150');
+                    indicator.classList.add('bg-gray-300', 'scale-100');
+                });
+            
+                // 强制重绘
+                void 轮播文字[索引].offsetWidth;
+            
+                // 显示当前索引的图片和文字
+                轮播图片[索引].style.opacity = '1';
+                轮播文字[索引].style.opacity = '1';
+                轮播指示器[索引].classList.remove('bg-gray-300', 'scale-100');
+                轮播指示器[索引].classList.add('bg-primary', 'scale-150');
+            
+                当前索引 = 索引;
+                console.log('显示轮播项:', 索引); // 添加调试日志
+            }
+        
+            // 切换到下一张
+            function 切换到下一张() {
+                let 下一个索引 = (当前索引 + 1) % 轮播图片.length;
+                显示内容(下一个索引);
+            }
+        
+            // 启动自动轮播
+            function 启动自动轮播() {
+                轮播定时器 = setInterval(切换到下一张, 轮播间隔);
+            }
+        
+            // 停止自动轮播
+            function 停止自动轮播() {
+                clearInterval(轮播定时器);
+            }
+        
+            // 初始化显示第一张
+            显示内容(0);
+        
+            // 启动自动轮播
+            启动自动轮播();
+        
+            // 鼠标悬停时暂停轮播
+            轮播容器.addEventListener('mouseenter', 停止自动轮播);
+        
+            // 鼠标离开时恢复轮播
+            轮播容器.addEventListener('mouseleave', 启动自动轮播);
+        
+            // 点击指示器切换内容
+            轮播指示器.forEach((indicator, 索引) => {
+                indicator.addEventListener('click', () => 显示内容(索引));
+            });
+        }

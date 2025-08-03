@@ -4,7 +4,7 @@
                 content-visibility: auto;
             }
             .text-shadow {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                text-shadow: 0 2px 4px rgba(0,0,0,0.5);
             }
             .text-shadow-lg {
                 text-shadow: 0 4px 8px rgba(0,0,0,0.5);
@@ -240,4 +240,106 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.4);
+        }
+
+        /* 轮播样式 */
+        .非遗轮播-container {
+            position: relative;
+            align-items: center;
+        }
+        
+        .轮播图片-container {
+            position: relative;
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .轮播文字-item h3 {
+                font-size: 1.8rem;
+            }
+            .轮播文字-item p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            .轮播文字-container {
+                margin-top: 2rem;
+            }
+        }
+        
+        #轮播图片-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .轮播图片 {
+            transition: opacity 1s ease-in-out;
+        }
+        
+        #轮播文字-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .轮播文字-item {
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 100%; /* 使用最小高度而不是固定高度 */
+            overflow-y: auto;
+            padding: 1.5rem;
+        }
+
+        .轮播文字-container {
+            position: relative;
+            height: 450px; /* 增加固定高度以容纳更多内容 */
+            min-height: 350px;
+            width: 100%;
+            max-width: 800px;
+            z-index: 10;
+        }
+
+        /* 确保响应式布局正常工作 */
+        @media (max-width: 768px) {
+            .轮播文字-container {
+                min-height: 400px;
+            }
+            .heritage-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        #轮播指示器 {
+            position: relative;
+            z-index: 20;
+            margin-top: 2rem;
+        }
+        
+        .轮播指示器-item {
+            cursor: pointer;
+        }
+        
+        .轮播指示器-item:hover {
+            transform: scale(1.3);
+        }
+        .轮播文字-item h3 {
+            font-family: 'Noto Serif SC', Georgia, serif; /* 更有特色的中文衬线字体 */
+            background: linear-gradient(45deg, #333, #555);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.05em;
+        }
+        
+        .轮播文字-item p {
+            font-family: 'Inter', 'PingFang SC', sans-serif; /* 清晰的无衬线字体 */
+            line-height: 1.8;
+            text-align: justify;
+            text-justify: inter-character;
+        }
+        
+        .text-shadow-lg {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
